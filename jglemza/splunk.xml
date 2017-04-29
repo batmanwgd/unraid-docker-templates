@@ -2,7 +2,7 @@
 <Container>
   <Beta>False</Beta>
   <Category>Network:Management</Category>
-  <Overview>Splunk is a remote syslog server that accepts any data feed.</Overview>
+  <Overview>Splunk is a remote logging server that accepts any data feed.</Overview>
   <Support>https://github.com/jglemza/unraid-docker-templates</Support>
   <Date>4/29/2017</Date>
   <Name>splunk</Name>
