@@ -3,26 +3,19 @@
   <Beta>False</Beta>
   <Category>Network:Management</Category>
   <Overview>Splunk is a remote syslog server that accepts any data feed.</Overview>
-  <Support>http://lime-technology.com/forum/index.php?topic=38548.0</Support>
-  <Date>4/6/2017</Date>
+  <Support>https://github.com/jglemza/unraid-docker-templates</Support>
+  <Date>4/29/2017</Date>
   <Name>splunk</Name>
   <Description>
     [h3]splunk[/h3] Splunk captures, indexes, and correlates real-time data in a searchable repository from which it can generate graphs, reports, alerts, dashboards, and visualizations. Try it as your remote syslog server![br][br]
     [b][span style=\'color: #E80000;\']Directions:[/span][/b][br]
-    [b]/opt/splunk/var[/b] : this path is where splunk will store it\'s configuration files and databases.[br]
-    [b]/data[/b] : if mapped, this path can be added to splunk to monitor the host (i.e. /var/log).[br]
-	[b]/license[/b] : if mapped, this path should hold the license file if wanting to use splunk enterprise.[br]
+    [b]/opt/splunk/var[/b] : This path is where splunk will store it\'s databases.[br]
+    [b]/opt/splunk/etc[/b] : This is the path where splunk where configuration files are saved.[br]
   </Description>
   <Changes>
-  	[center][font size=5]splunk Change Log[/font][/center]
-	[font size=4]2015.03.04[/font]
-	- Initial Release
-
-	[font size=4]2015.11.25[/font]
-	- Updated splunk to v6.3.1
-	  
-	[font size=4]2017.04.03[/font]
-	- Updated splunk to v6.5.3
+  	[center][font size=5]Splunk Change Log[/font][/center]
+	[font size=4]2015.04.29[/font]
+	- Initial Release, adapted from dmaxwell351.
   </Changes>
   <Registry>https://hub.docker.com/r/splunk/splunk/</Registry>
   <Repository>splunk/splunk</Repository>
@@ -56,11 +49,23 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/splunk</HostDir>
+      <HostDir>/mnt/user/appdata/splunk/var/</HostDir>
       <ContainerDir>/opt/splunk/var</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/splunk/etc/</HostDir>
+      <ContainerDir>/opt/splunk/etc</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
   </Data>
+  <Environment>
+    <Variable>
+      <Value>--accept-license --answer-yes --no-prompt</Value>
+      <Name>SPLUNK_START_ARGS</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
   <Version>6.5.3</Version>
   <WebUI>http://[IP]:[PORT:8000]/</WebUI>
   <Banner>http://i.imgur.com/eddJlVg.png</Banner>
