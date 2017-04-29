@@ -70,11 +70,5 @@
   <WebUI>http://[IP]:[PORT:8000]/</WebUI>
   <Banner>http://i.imgur.com/eddJlVg.png</Banner>
   <Icon>http://i.imgur.com/KKoQMo6.png</Icon>
-  <Config Name="Host Port 1" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
-  <Config Name="Host Port 2" Target="8089" Default="8089" Mode="tcp" Description="Container Port: 8089" Type="Port" Display="always" Required="true" Mask="false">8089</Config>
-  <Config Name="Host Port 3" Target="9997" Default="9997" Mode="tcp" Description="Container Port: 9997" Type="Port" Display="always" Required="true" Mask="false">9997</Config>
-  <Config Name="Host Port 4" Target="514" Default="514" Mode="udp" Description="Container Port: 514" Type="Port" Display="always" Required="true" Mask="false">514</Config>
-  <Config Name="Host Path 1" Target="/opt/splunk/var" Default="/mnt/user/appdata/splunk" Mode="rw" Description="Container Path: /opt/splunk/var" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/splunk/var/</Config>
-  <Config Name="Config" Target="/opt/splunk/etc" Default="" Mode="rw" Description="Container Path: /opt/splunk/etc" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/splunk/etc/</Config>
   <Config Name="Splunk Args" Target="SPLUNK_START_ARGS" Default="" Mode="" Description="Container Variable: SPLUNK_START_ARGS" Type="Variable" Display="always" Required="false" Mask="false">--accept-license --answer-yes --no-prompt</Config>
 </Container>
