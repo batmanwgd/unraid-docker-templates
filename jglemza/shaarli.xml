@@ -21,7 +21,7 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/wallabag/</HostDir>
+      <HostDir>/mnt/user/appdata/shaarli/</HostDir>
       <ContainerDir>/var/www/shaarli/data</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
