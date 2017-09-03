@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Name>Shaarli</Name>
+  <Description>
+    [h3]Shaarli[/h3]The personal, minimalist, super-fast, database free, bookmarking service.
+  </Description>
+  <Registry>https://hub.docker.com/r/shaarli/shaarli/</Registry>
+  <Repository>shaarli/shaarli</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>80</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/wallabag/</HostDir>
+      <ContainerDir>/var/www/shaarli/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Version></Version>
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+  <Banner>http://i.imgur.com/Cq6DZ70.png</Banner>
+  <Icon>http://i.imgur.com/WczvTjH.png</Icon>
+</Container>
